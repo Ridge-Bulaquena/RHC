@@ -65,17 +65,19 @@ export const Section: React.FC<SectionProps> = ({ id, title, subtitle, children,
 };
 
 interface CalloutProps {
-  type: 'key' | 'def' | 'critique';
+  type: 'key' | 'def' | 'critique' | 'theorem';
   label: string;
+  number?: string;
   children: React.ReactNode;
   className?: string;
 }
 
-export const Callout: React.FC<CalloutProps> = ({ type, label, children, className }) => {
+export const Callout: React.FC<CalloutProps> = ({ type, label, number, children, className }) => {
   const typeClasses = {
     key: 'callout-key',
     def: 'callout-def',
     critique: 'callout-critique',
+    theorem: 'callout-theorem',
   };
 
   return (
@@ -87,7 +89,7 @@ export const Callout: React.FC<CalloutProps> = ({ type, label, children, classNa
       className={cn("callout", typeClasses[type], className)}
     >
       <span className="block text-xs font-bold uppercase tracking-widest mb-3 opacity-80">
-        {label}
+        {label} {number && <span className="text-gold-500 ml-1">[{number}]</span>}
       </span>
       <div className="text-lg leading-relaxed">
         {children}
