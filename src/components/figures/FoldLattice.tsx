@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { FigureContainer } from '../FigureContainer';
 import { Info, ZoomIn, ZoomOut, Maximize2, Minimize2 } from 'lucide-react';
 

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Ruler, MoveHorizontal } from 'lucide-react';
-import { Math as MathComp } from '../Math';
+import { MathComp } from '../Math';
 
 const GeodesicDistancePlot: React.FC = () => {
   const [theta1, setTheta1] = useState(Math.PI / 4);

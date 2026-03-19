@@ -1,19 +1,19 @@
 import React, { useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { FigureContainer } from '../FigureContainer';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, AreaChart, Area } from 'recharts';
 import { Info, BarChart2, TrendingUp } from 'lucide-react';
 
 export const PrimitiveDensity: React.FC = () => {
-  const gcd = (a: number, b: number): number => {
-    a = Math.abs(a);
-    b = Math.abs(b);
-    while (b) {
-      a %= b;
-      [a, b] = [b, a];
+  function gcd(a: number, b: number): number {
+    let x = Math.abs(a);
+    let y = Math.abs(b);
+    while (y) {
+      x %= y;
+      [x, y] = [y, x];
     }
-    return a;
-  };
+    return x;
+  }
 
   const data = useMemo(() => {
     const results = [];

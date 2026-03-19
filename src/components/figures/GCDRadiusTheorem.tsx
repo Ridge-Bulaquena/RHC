@@ -1,15 +1,17 @@
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { FigureContainer } from '../FigureContainer';
 import { Info, Maximize2, Minimize2, Copy } from 'lucide-react';
 
-const gcd = (a: number, b: number): number => {
-  while (b) {
-    a %= b;
-    [a, b] = [b, a];
+function gcd(a: number, b: number): number {
+  let x = Math.abs(a);
+  let y = Math.abs(b);
+  while (y) {
+    x %= y;
+    [x, y] = [y, x];
   }
-  return a;
-};
+  return x;
+}
 
 export const GCDRadiusTheorem: React.FC = () => {
   const [a, setA] = useState(12);

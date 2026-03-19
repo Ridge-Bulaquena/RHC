@@ -65,7 +65,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, subtitle, children,
 };
 
 interface CalloutProps {
-  type: 'key' | 'def' | 'critique' | 'theorem';
+  type: 'key' | 'def' | 'critique' | 'theorem' | 'historical';
   label: string;
   number?: string;
   children: React.ReactNode;
@@ -78,6 +78,7 @@ export const Callout: React.FC<CalloutProps> = ({ type, label, number, children,
     def: 'callout-def',
     critique: 'callout-critique',
     theorem: 'callout-theorem',
+    historical: 'callout-historical',
   };
 
   return (

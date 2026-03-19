@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { FigureContainer } from '../FigureContainer';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Info, Play, Pause, RefreshCw } from 'lucide-react';
 
 export const FoldEuclideanSpiral: React.FC = () => {

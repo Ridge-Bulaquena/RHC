@@ -8,7 +8,7 @@ interface MathProps {
   className?: string;
 }
 
-export const Math: React.FC<MathProps> = ({ formula, display = false, className = '' }) => {
+export const MathComp: React.FC<MathProps> = ({ formula, display = false, className = '' }) => {
   const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export const MathBlock: React.FC<{ formula: string; label?: string }> = ({ formu
           {label}
         </span>
       )}
-      <Math formula={formula} display className="text-xl md:text-2xl" />
+      <MathComp formula={formula} display className="text-xl md:text-2xl" />
     </motion.div>
   );
 };

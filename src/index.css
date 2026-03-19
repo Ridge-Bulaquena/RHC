@@ -68,6 +68,14 @@
   .callout-critique {
     @apply bg-critique-bg text-on-critique border-white/25;
   }
+
+  .callout-historical {
+    @apply bg-navy-100 text-navy-800 border-navy-300;
+  }
+
+  .pull-quote {
+    @apply my-12 p-8 border-y border-gold-400/30 text-3xl md:text-4xl font-serif italic text-navy-800 text-center leading-tight;
+  }
 }
 
 /* Custom scrollbar */

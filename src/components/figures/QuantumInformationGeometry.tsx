@@ -2,7 +2,7 @@ import React, { useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere, MeshDistortMaterial, Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Zap, Box } from 'lucide-react';
 
 const QuantumSphere: React.FC<{ isQuantum: boolean }> = ({ isQuantum }) => {

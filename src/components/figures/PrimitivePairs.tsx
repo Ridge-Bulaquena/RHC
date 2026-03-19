@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { FigureContainer } from '../FigureContainer';
 import { Info, Eye, EyeOff, RefreshCw } from 'lucide-react';
 
@@ -9,15 +9,15 @@ export const PrimitivePairs: React.FC = () => {
   const [hoveredPoint, setHoveredPoint] = useState<{ p: number, q: number, isPrimitive: boolean } | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const gcd = (a: number, b: number): number => {
-    a = Math.abs(a);
-    b = Math.abs(b);
-    while (b) {
-      a %= b;
-      [a, b] = [b, a];
+  function gcd(a: number, b: number): number {
+    let x = Math.abs(a);
+    let y = Math.abs(b);
+    while (y) {
+      x %= y;
+      [x, y] = [y, x];
     }
-    return a;
-  };
+    return x;
+  }
 
   const draw = () => {
     const canvas = canvasRef.current;

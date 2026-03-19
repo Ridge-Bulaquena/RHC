@@ -1,18 +1,20 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Grid, Target } from 'lucide-react';
-import { Math as MathComp } from '../Math';
+import { MathComp } from '../Math';
 
 const PrimitiveLatticeVisual: React.FC = () => {
   const [n, setN] = useState(10);
 
-  const gcd = (a: number, b: number): number => {
-    while (b) {
-      a %= b;
-      [a, b] = [b, a];
+  function gcd(a: number, b: number): number {
+    let x = Math.abs(a);
+    let y = Math.abs(b);
+    while (y) {
+      x %= y;
+      [x, y] = [y, x];
     }
-    return a;
-  };
+    return x;
+  }
 
   const points = useMemo(() => {
     const arr = [];

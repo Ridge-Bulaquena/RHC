@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Info, Activity } from 'lucide-react';
-import { Math as MathComp } from '../Math';
+import { MathComp } from '../Math';
 
 const FisherMetricPlot: React.FC = () => {
   const [theta, setTheta] = useState(Math.PI / 4);

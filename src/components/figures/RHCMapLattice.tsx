@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { FigureContainer } from '../FigureContainer';
 import { Settings, Info, Maximize2, Minimize2 } from 'lucide-react';
 
@@ -22,13 +22,15 @@ interface PointData {
   d: number;
 }
 
-const gcd = (a: number, b: number): number => {
-  while (b) {
-    a %= b;
-    [a, b] = [b, a];
+function gcd(a: number, b: number): number {
+  let x = Math.abs(a);
+  let y = Math.abs(b);
+  while (y) {
+    x %= y;
+    [x, y] = [y, x];
   }
-  return a;
-};
+  return x;
+}
 
 export const RHCMapLattice: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);

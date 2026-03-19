@@ -7,13 +7,15 @@ export const AngleDensityPlot: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [maxN, setMaxN] = useState(50);
 
-  const gcd = (a: number, b: number): number => {
-    while (b) {
-      a %= b;
-      [a, b] = [b, a];
+  function gcd(a: number, b: number): number {
+    let x = Math.abs(a);
+    let y = Math.abs(b);
+    while (y) {
+      x %= y;
+      [x, y] = [y, x];
     }
-    return a;
-  };
+    return x;
+  }
 
   const generateData = (n: number) => {
     const angles: number[] = [];
